@@ -66,6 +66,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'org.parceler:parceler-api:1.1.13'
     annotationProcessor 'org.parceler:parceler:1.1.13'
+    implementation "androidx.cardview:cardview:1.0.0"
 
 //Image
     implementation 'com.github.bumptech.glide:glide:4.7.1'
@@ -83,8 +84,10 @@ dependencies {
 //Realtime Database for firebase data saving
     implementation 'com.google.firebase:firebase-database:19.5.1'
     implementation 'com.firebaseui:firebase-ui-database:6.2.0'
-//    implementation 'com.firebaseui:firebase-ui-database:3.3.1'
     implementation 'com.google.android.material:material:1.2.1'
 //Firebase User Authentication
     implementation 'com.google.firebase:firebase-auth:20.0.0'
 }
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
