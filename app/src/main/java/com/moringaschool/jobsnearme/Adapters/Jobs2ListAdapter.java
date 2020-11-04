@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.moringaschool.jobsnearme.R;
 import com.moringaschool.jobsnearme.models.Result;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 import butterknife.BindView;
@@ -47,7 +45,7 @@ public class Jobs2ListAdapter extends RecyclerView.Adapter<Jobs2ListAdapter.Jobs
     }
 
     public class JobsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        @BindView(R.id.contentTextView) TextView mContentTextView;
+        @BindView(R.id.natureTextView) TextView mNatureTextView;
         @BindView(R.id.nameTextView) TextView mNameTextView;
 
         private Context mContext;
@@ -65,8 +63,11 @@ public class Jobs2ListAdapter extends RecyclerView.Adapter<Jobs2ListAdapter.Jobs
         }
 
         public void bindJobResults(Result result) {
-            mContentTextView.setText(result.getShortName());
             mNameTextView.setText(result.getName());
+
+            mNatureTextView.setText(result.getPublicationDate());
         }
     }
+
+
 }

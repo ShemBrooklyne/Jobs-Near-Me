@@ -1,4 +1,4 @@
-package com.moringaschool.jobsnearme;
+package com.moringaschool.jobsnearme.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,12 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.moringaschool.jobsnearme.Adapters.Jobs2ListAdapter;
 import com.moringaschool.jobsnearme.Network.JobsApi;
 import com.moringaschool.jobsnearme.Network.JobsClient;
+import com.moringaschool.jobsnearme.R;
 import com.moringaschool.jobsnearme.models.JobsListSearchResponse;
 import com.moringaschool.jobsnearme.models.Result;
 
@@ -53,7 +53,7 @@ public class JobsListActivity extends AppCompatActivity {
 
         //Establishing connection of app and theMuse Api
         JobsApi jobsApi = JobsClient.getClient();
-        Call<JobsListSearchResponse> call = jobsApi.getJobs(2);
+        Call<JobsListSearchResponse> call = jobsApi.getJobs(2, "fb59d07225fe46c6129cb850963369e2a9353f35c7803be61bb3d0b6e988c985", 50);
 
         call.enqueue(new Callback<JobsListSearchResponse>() {
             @Override
