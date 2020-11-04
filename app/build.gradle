@@ -29,6 +29,8 @@ android {
         exclude 'META-INF/notice.txt'
     }
 
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -85,7 +87,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:19.5.1'
     implementation 'com.firebaseui:firebase-ui-database:6.2.0'
     implementation 'com.google.android.material:material:1.2.1'
-//Firebase User Authentication
+//Firebase User com.moringaschool.jobsnearme.Authentication
     implementation 'com.google.firebase:firebase-auth:20.0.0'
 }
 

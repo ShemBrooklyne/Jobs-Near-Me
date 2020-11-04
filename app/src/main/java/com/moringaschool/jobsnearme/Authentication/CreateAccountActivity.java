@@ -1,4 +1,4 @@
-package com.moringaschool.jobsnearme;
+package com.moringaschool.jobsnearme.Authentication;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -19,6 +19,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.moringaschool.jobsnearme.MainActivity;
+import com.moringaschool.jobsnearme.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -99,11 +101,11 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
                 mAuthProgressDialog.dismiss();
 
                 if (task.isSuccessful()) {
-                    Log.d(TAG, "Authentication successful");
+                    Log.d(TAG, "com.moringaschool.jobsnearme.Authentication successful");
                     createFirebaseUserProfile(task.getResult().getUser());
 
                 } else {
-                    Toast.makeText(CreateAccountActivity.this, "Authentication failed.",
+                    Toast.makeText(CreateAccountActivity.this, "com.moringaschool.jobsnearme.Authentication failed.",
                             Toast.LENGTH_SHORT).show();
                 }
 

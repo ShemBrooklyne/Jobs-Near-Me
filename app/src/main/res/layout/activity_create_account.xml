@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/loginacc"
-    tools:context=".CreateAccountActivity">
+    tools:context=".Authentication.CreateAccountActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"

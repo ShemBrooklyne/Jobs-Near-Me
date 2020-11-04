@@ -1,6 +1,5 @@
-package com.moringaschool.jobsnearme;
+package com.moringaschool.jobsnearme.Authentication;
 
-import android.animation.ObjectAnimator;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.moringaschool.jobsnearme.MainActivity;
+import com.moringaschool.jobsnearme.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -116,7 +117,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithEmail", task.getException());
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                            Toast.makeText(LoginActivity.this, "com.moringaschool.jobsnearme.Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
