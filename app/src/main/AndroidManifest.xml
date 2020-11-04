@@ -20,13 +20,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".Authentication.CreateAccountActivity"/>
-            <activity android:name=".ui.JobsListActivity">
+            <activity android:name=".JobsListActivity">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity" />
+                android:value=".MainActivity" />
         </activity>
-        <activity android:name=".ui.MainActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

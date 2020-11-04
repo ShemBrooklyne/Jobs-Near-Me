@@ -1,4 +1,4 @@
-package com.moringaschool.jobsnearme.ui;
+package com.moringaschool.jobsnearme;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,12 +7,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.moringaschool.jobsnearme.Adapters.Jobs2ListAdapter;
 import com.moringaschool.jobsnearme.Network.JobsApi;
 import com.moringaschool.jobsnearme.Network.JobsClient;
-import com.moringaschool.jobsnearme.R;
+import com.moringaschool.jobsnearme.models.Category;
 import com.moringaschool.jobsnearme.models.JobsListSearchResponse;
 import com.moringaschool.jobsnearme.models.Result;
 
@@ -37,11 +38,13 @@ public class JobsListActivity extends AppCompatActivity {
 
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     @BindView(R.id.errorTextView) TextView mErrorTextView;
-//    @BindView(R.id.progressBar) ProgressBar mProgressBar;
+    @BindView(R.id.progressBar) ProgressBar mProgressBar;
 
     private Jobs2ListAdapter mAdapter;
 
     public List<Result> results;
+
+    public List<Category> categories;
 
     //Override calling get methods in main layout and class
 
@@ -53,16 +56,16 @@ public class JobsListActivity extends AppCompatActivity {
 
         //Establishing connection of app and theMuse Api
         JobsApi jobsApi = JobsClient.getClient();
-        Call<JobsListSearchResponse> call = jobsApi.getJobs(2, "fb59d07225fe46c6129cb850963369e2a9353f35c7803be61bb3d0b6e988c985", 50);
+        Call<JobsListSearchResponse> call = jobsApi.getJobs(2, "fb59d07225fe46c6129cb850963369e2a9353f35c7803be61bb3d0b6e988c985");
 
         call.enqueue(new Callback<JobsListSearchResponse>() {
             @Override
             public void onResponse(Call<JobsListSearchResponse> call, Response<JobsListSearchResponse> response) {
                 Log.d("On Response", "Got Response");
                 if (response.isSuccessful()) {
-//                    hideProgressBar();
+                    hideProgressBar();
                     results = response.body().getResults();
-                    mAdapter = new Jobs2ListAdapter(JobsListActivity.this, results);
+                    mAdapter = new Jobs2ListAdapter(JobsListActivity.this, results, categories);
                     mRecyclerView.setAdapter(mAdapter);
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(JobsListActivity.this);
                     mRecyclerView.setLayoutManager(layoutManager);
@@ -76,7 +79,7 @@ public class JobsListActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<JobsListSearchResponse> call, Throwable t) {
                 Log.e(TAG, "onFailure:", t);
-//                hideProgressBar();
+                hideProgressBar();
                 showFailureMessage();
             }
         });
@@ -110,9 +113,9 @@ public class JobsListActivity extends AppCompatActivity {
         mRecyclerView.setVisibility(View.VISIBLE);
     }
 
-//    private void hideProgressBar() {
-//        mProgressBar.setVisibility(View.GONE);
-//    }
+    private void hideProgressBar() {
+        mProgressBar.setVisibility(View.GONE);
+    }
 
 }
 

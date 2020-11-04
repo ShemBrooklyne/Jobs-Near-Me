@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringaschool.jobsnearme.R;
+import com.moringaschool.jobsnearme.models.Category;
 import com.moringaschool.jobsnearme.models.Result;
 
 import java.util.List;
@@ -19,11 +20,13 @@ import butterknife.ButterKnife;
 
 public class Jobs2ListAdapter extends RecyclerView.Adapter<Jobs2ListAdapter.JobsViewHolder> {
     private List<Result> mResults;
+    private List<Category> mCategory;
     private Context mContext;
 
-    public Jobs2ListAdapter(Context context, List<Result> results) {
+    public Jobs2ListAdapter(Context context, List<Result> results, List<Category> categories) {
         mContext = context;
         mResults = results;
+        mCategory = categories;
     }
 
     @NonNull
@@ -37,6 +40,7 @@ public class Jobs2ListAdapter extends RecyclerView.Adapter<Jobs2ListAdapter.Jobs
     @Override
     public void onBindViewHolder(@NonNull Jobs2ListAdapter.JobsViewHolder holder, int position) {
         holder.bindJobResults(mResults.get(position));
+//        holder.bindJobResults(mCategory.get(position));
     }
 
     @Override
@@ -47,6 +51,11 @@ public class Jobs2ListAdapter extends RecyclerView.Adapter<Jobs2ListAdapter.Jobs
     public class JobsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @BindView(R.id.natureTextView) TextView mNatureTextView;
         @BindView(R.id.nameTextView) TextView mNameTextView;
+        @BindView(R.id.categoryView) TextView mCategoryTextView;
+        @BindView(R.id.levelsView) TextView mLevelsTextView;
+        @BindView(R.id.linkView) TextView mLinkTextView;
+        @BindView(R.id.companyView) TextView mCompanyTextView;
+        @BindView(R.id.locationView) TextView mLocationTextView;
 
         private Context mContext;
 
@@ -64,8 +73,12 @@ public class Jobs2ListAdapter extends RecyclerView.Adapter<Jobs2ListAdapter.Jobs
 
         public void bindJobResults(Result result) {
             mNameTextView.setText(result.getName());
-
             mNatureTextView.setText(result.getPublicationDate());
+//            mCategoryTextView.setText(category.getName());
+//            mLevelsTextView.setText(category.getName());
+            mLinkTextView.setText(result.getRefs().getLandingPage());
+            mCompanyTextView.setText(result.getCompany().getName());
+            mLocationTextView.setText(result.getCompany().getShortName());
         }
     }
 
