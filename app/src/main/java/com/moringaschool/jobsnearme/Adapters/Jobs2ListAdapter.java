@@ -1,6 +1,7 @@
 package com.moringaschool.jobsnearme.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +10,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.moringaschool.jobsnearme.JobsListDetailActivity;
 import com.moringaschool.jobsnearme.R;
 import com.moringaschool.jobsnearme.models.Category;
 import com.moringaschool.jobsnearme.models.Result;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -68,7 +72,11 @@ public class Jobs2ListAdapter extends RecyclerView.Adapter<Jobs2ListAdapter.Jobs
 
         @Override
         public void onClick(View v) {
-
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, JobsListDetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("results", Parcels.wrap(mResults));
+            mContext.startActivity(intent);
         }
 
         public void bindJobResults(Result result) {
