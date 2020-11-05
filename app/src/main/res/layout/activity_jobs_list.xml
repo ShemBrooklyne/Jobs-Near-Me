@@ -4,27 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#272a2c"
     android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
-        android:background="#ffffff"
         android:orientation="vertical"
         android:padding="10dp">
 
 
         <androidx.cardview.widget.CardView
-            android:layout_width="382dp"
-            android:layout_height="302dp"
-            app:cardBackgroundColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="95dp">
+            tools:layout_editor_absoluteY="0dp">
 
             <TextView
                 android:id="@+id/natureTextView"
-                android:layout_width="356dp"
+                android:layout_width="365dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
@@ -35,48 +34,59 @@
 
             <TextView
                 android:id="@+id/companyView"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="140dp"
-                android:text="Hiring Company" />
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="170dp"
+                android:text="Hiring Company"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/locationView"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="170dp"
-                android:text="Company's LOcation" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="200dp"
+                android:text="Company's LOcation"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/linkView"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="110dp"
-                android:text="Link to Website" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="130dp"
+                android:text="Link to Website"
+                android:textColor="#3A4EB8"
+                android:textStyle="italic" />
 
             <TextView
                 android:id="@+id/levelsView"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="80dp"
-                android:text="Difficulty Level" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="90dp"
+                android:text="Difficulty Level"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/nameTextView"
-                android:layout_width="371dp"
-                android:layout_height="40dp"
-                android:background="#F6F0F0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffffff"
                 android:text="position"
                 android:textColor="#0B0A0B"
-                android:textSize="18dp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/categoryView"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="50dp"
-                android:text="Job Category" />
+                android:text="Job Category"
+                android:textSize="18sp" />
 
         </androidx.cardview.widget.CardView>
 
