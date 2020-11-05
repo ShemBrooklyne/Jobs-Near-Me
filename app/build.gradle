@@ -29,6 +29,8 @@ android {
         exclude 'META-INF/notice.txt'
     }
 
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -66,12 +68,16 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'org.parceler:parceler-api:1.1.13'
     annotationProcessor 'org.parceler:parceler:1.1.13'
+    implementation "androidx.cardview:cardview:1.0.0"
+    //http loging
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+
 
 //Image
     implementation 'com.github.bumptech.glide:glide:4.7.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
 
-//Network
+//com.moringaschool.jobsnearme.Network
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
@@ -83,8 +89,10 @@ dependencies {
 //Realtime Database for firebase data saving
     implementation 'com.google.firebase:firebase-database:19.5.1'
     implementation 'com.firebaseui:firebase-ui-database:6.2.0'
-//    implementation 'com.firebaseui:firebase-ui-database:3.3.1'
     implementation 'com.google.android.material:material:1.2.1'
-//Firebase User Authentication
+//Firebase User com.moringaschool.jobsnearme.Authentication
     implementation 'com.google.firebase:firebase-auth:20.0.0'
 }
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'

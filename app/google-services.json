@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "120724513147",
+    "firebase_url": "https://jobsnearme-63340.firebaseio.com",
+    "project_id": "jobsnearme-63340",
+    "storage_bucket": "jobsnearme-63340.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120724513147:android:dc9adfc73a2fd2e4755dde",
+        "android_client_info": {
+          "package_name": "com.moringaschool.jobsnearme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120724513147-md97if856p9ik51116kdjub7icue3nms.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moringaschool.jobsnearme",
+            "certificate_hash": "1a95b2e2a57b81fc9562df37305ad8528710c8e3"
+          }
+        },
+        {
+          "client_id": "120724513147-6n7cjme93g5g2k1femgb8tsqu20eq053.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa1QV6s23nZVyu87wgOW3hnxUt9jYBxts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120724513147-6n7cjme93g5g2k1femgb8tsqu20eq053.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
