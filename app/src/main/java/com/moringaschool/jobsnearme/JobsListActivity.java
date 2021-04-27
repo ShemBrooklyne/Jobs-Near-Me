@@ -85,18 +85,6 @@ public class JobsListActivity extends AppCompatActivity {
         });
 
 
-        //Set adapter for powering ListView to List items.
-//        ArrayAdapter adapter = new JobsListAdapter(JobsListActivity.this, android.R.layout.simple_list_item_1, jobs);
-//        JobsView.setAdapter(adapter);
-//
-//        JobsView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                String listItem = ((TextView)view).getText().toString();
-//                Toast.makeText(JobsListActivity.this, listItem, Toast.LENGTH_LONG).show();
-//            }
-//        });
-
     }
 
     private void showFailureMessage() {
